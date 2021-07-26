@@ -72,20 +72,31 @@ function control(e) {
     squares[pacmanCurrentIndex].classList.remove('pacman')
     switch (e.key) {
         case 'ArrowUp':
-        if (pacmanCurrentIndex - width >= 0) pacmanCurrentIndex -= width
+        if ( !squares[pacmanCurrentIndex - width].classList.contains('wall') &&
+            pacmanCurrentIndex - width >= 0
+            ) 
+            pacmanCurrentIndex -= width
         break
 
         case 'ArrowDown':
-        if(pacmanCurrentIndex + width < width * width) pacmanCurrentIndex += width
+        if( !squares[pacmanCurrentIndex + width].classList.contains('wall') &&
+            pacmanCurrentIndex + width < width * width
+            ) 
+            pacmanCurrentIndex += width
         break
 
         case 'ArrowRight':
-        if (pacmanCurrentIndex % width < width - 1) pacmanCurrentIndex += 1
+        if ( !squares[pacmanCurrentIndex + 1].classList.contains('wall') &&
+            pacmanCurrentIndex % width < width - 1
+            ) 
+            pacmanCurrentIndex += 1
         break
 
         case 'ArrowLeft':
-        if (pacmanCurrentIndex % width !== 0) pacmanCurrentIndex -=1
- 
+        if ( !squares[pacmanCurrentIndex - 1].classList.contains('wall') &&
+            pacmanCurrentIndex % width !== 0
+            ) 
+            pacmanCurrentIndex -=1
         break
     }
     squares[pacmanCurrentIndex].classList.add('pacman')
