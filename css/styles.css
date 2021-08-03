@@ -37,3 +37,28 @@ body {
     border-radius: 7.5px;
     border: none;
 }
+
+.blinky {
+    background-color: #ff0000;
+    border: none;
+}
+
+.pinky {
+    background-color: #ffb8ff;
+    border: none;
+}
+
+.inky {
+    background-color: #00ffff;
+    border: none;
+}
+
+.clyde {
+    background-color: #ffb852;
+    border: none;
+}
+
+.scared-ghost {
+    background-color: #00ffff;
+    border: none;
+}
